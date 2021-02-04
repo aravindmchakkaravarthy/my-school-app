@@ -53,6 +53,8 @@ public class PlayController {
             if(currentWord.getWord().equals(currentWord.getSpelling())){
                 playResponse.setCurrentScore(playRequest.getCurrentScore() + 1);
                 playResponse.setResult(true);
+            }else{
+                playResponse.setCurrentScore(playRequest.getCurrentScore());
             }
             playResponse.setTotal(playRequest.getTotal()+1);
         }

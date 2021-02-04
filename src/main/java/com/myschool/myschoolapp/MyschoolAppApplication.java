@@ -7,7 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MyschoolAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MyschoolAppApplication.class, args);
+try{
+	SpringApplication.run(MyschoolAppApplication.class, args);
+}catch(Exception E){
+	E.printStackTrace();
+}
+
 	}
 
 }

@@ -8,6 +8,8 @@ public class Word {
 
     private String url;
 
+    private String spelling;
+
     public String getWord() {
         return word;
     }
@@ -30,5 +32,13 @@ public class Word {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getSpelling() {
+        return spelling;
+    }
+
+    public void setSpelling(String spelling) {
+        this.spelling = spelling;
     }
 }

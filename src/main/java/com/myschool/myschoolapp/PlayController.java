@@ -28,7 +28,7 @@ public class PlayController {
     private Word getNextWord() {
         if (null == words) {
             InputStream in = this.getClass().getClassLoader()
-                    .getResourceAsStream("corncob_lowercase.txt");
+                    .getResourceAsStream("good-words.txt");
             try (
                     BufferedReader br
                             = new BufferedReader(new InputStreamReader(in))
@@ -46,7 +46,7 @@ public class PlayController {
         return word;
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin
     @PostMapping("/play")
     public PlayResponse play(@RequestBody PlayRequest playRequest) {
         PlayResponse playResponse = new PlayResponse();

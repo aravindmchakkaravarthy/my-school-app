@@ -53,6 +53,7 @@ public class PlayController {
     @CrossOrigin
     @PostMapping("/play")
     public PlayResponse play(@RequestBody PlayRequest playRequest) {
+        log.info("Incoming play request");
         PlayResponse playResponse = new PlayResponse();
         if(null != playRequest.getCurrentWord()){
             Word currentWord = playRequest.getCurrentWord();

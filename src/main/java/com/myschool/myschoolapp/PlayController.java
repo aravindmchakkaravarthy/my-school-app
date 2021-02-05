@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.*;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 @RestController
@@ -22,7 +23,9 @@ public class PlayController {
     private static final Logger log = LoggerFactory.getLogger(PlayController.class);
 
     public int getRandomNumber(int min, int max) {
-        return (int) ((Math.random() * (max - min)) + min);
+        Random random = new Random();
+        return random.nextInt(max - min) + min;
+
     }
 
     private Word getNextWord() {
@@ -38,6 +41,7 @@ public class PlayController {
                 log.error("Error in reading words", E);
             }
         }
+
         int index = getRandomNumber(0, words.size()-1);
         Word word = new Word();
         word.setWord(words.get(index));
